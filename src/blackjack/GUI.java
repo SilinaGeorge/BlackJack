@@ -47,6 +47,7 @@ public class GUI extends JFrame {
 	}
 		 
 	private void createLayout() {
+		// create buttons, textfields, labels etc. with action listeners
 		
 		this.dealButton = makeButton("Deal", 150, 70, new Color(5, 5, 133), Color.WHITE);		
 		this.dealButton.addActionListener(
