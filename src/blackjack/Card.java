@@ -2,23 +2,18 @@ package blackjack;
 
 import java.awt.*;
 
-enum Suits{
-	DIAMOND,
-	CLUB,
-	HEART,
-	SPADE
-	
-}
-
 public class Card {
-	private Image img; 
+	Image img; 
 	int value;
-	Suits suit;
+	Suit suit;
+	Rank rank;
 	
-	public Card(Image img, int value, Suits suit) {
+	public Card(Image img, int value, Suit suit, Rank rank) {
 		this.img = img;
 		this.value = value;
 		this.suit = suit;
-	}
+		this.rank = rank;
 
+	}
+	
 }
