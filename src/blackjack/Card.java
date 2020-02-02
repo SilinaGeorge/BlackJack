@@ -3,10 +3,10 @@ package blackjack;
 import java.awt.*;
 
 public class Card {
-	Image img; 
-	int value;
-	Suit suit;
-	Rank rank;
+	private Image img; 
+	private int value;
+	private Suit suit;
+	private Rank rank;
 	
 	public Card(Image img, Suit suit, Rank rank) {
 		this.img = img;
@@ -50,5 +50,26 @@ public class Card {
 			
 		}
 	}
+	
+	// value of ace can either be 1 or 11 depending on which one is more suitable
+	public void setBestAceValue(int handTotal) {
+		if (rank == Rank.ACE) {
+			if (handTotal <= 10) value = 11;
+			else value = 1;
+		}
+	}
+	
+	public int getValue() {
+		return value;
+	}
+	
+	public Rank getRank() {
+		return rank;
+	}
+	
+	public Image getImage() {
+		return img;
+	}
+	
 	
 }

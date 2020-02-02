@@ -90,10 +90,15 @@ public class Deck {
 	}
 	
 	// returns the first card in the deckmap and remove it from deckmap
-	public Card drawCard(){
+	public Card drawCard(int handTotal){
 		if (deckMap.size() != 0) {
 			Card c = deck.get(deckMap.get(0));
 			deckMap.remove(0);
+			
+			if (c.getRank() == Rank.ACE) {
+				c.setBestAceValue(handTotal);
+			}
+			
 			return c;
 		}
 		
