@@ -31,7 +31,6 @@ public class Deck {
 	  
 	// used to make Card objects for each card
 	Hashtable<String,Rank> ranks = new Hashtable<String,Rank>();
-	ranks.put("1", Rank.ACE);
 	ranks.put("2", Rank.TWO);
 	ranks.put("3", Rank.THREE);
 	ranks.put("4", Rank.FOUR);
@@ -59,7 +58,8 @@ public class Deck {
 	ranks.forEach((strRank, rank) -> {
 		suits.forEach((strSuit, suit) ->{
 			try {
-				Image img = ImageIO.read(new File("images/" +strRank +strSuit+".png"));
+				String imagePath = "images/" +strRank +strSuit+".png";
+				Image img = ImageIO.read(new File(imagePath));
 				deck.put(index, new Card(img,suit, rank));
 				index++;
 			} catch (IOException e) {

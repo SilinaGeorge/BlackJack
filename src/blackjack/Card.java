@@ -18,49 +18,65 @@ public class Card {
 	}
 	
 	private void setValue() {
+		
 		switch(rank) {
 		case ACE:
-			value = 1;
+			this.value = 1;
+			break;
 		case EIGHT:
-			value = 8;
+			this.value = 8;
+			break;
 		case FIVE:
-			value = 5;
+			this.value = 5;
+			break;
 		case FOUR:
-			value = 4;
+			this.value = 4;
+			break;
 		case JACK:
-			value = 10;
+			this.value = 10;
+			break;
 		case KING:
-			value = 10;
+			this.value = 10;
+			break;
 		case NINE:
-			value = 9;
+			this.value = 9;
+			break;
 		case QUEEN:
-			value = 10;
+			this.value = 10;
+			break;
 		case SEVEN:
-			value = 7;
+			this.value = 7;
+			break;
 		case SIX:
-			value = 6;
+			this.value = 6;
+			break;
 		case TEN:
-			value = 10;
+			this.value = 10;
+			break;
 		case THREE:
-			value = 3;
+			this.value = 3;
+			break;
 		case TWO:
-			value = 2;
+			this.value = 2;
+			break;
 		default:
 			break;
 			
 		}
+		
 	}
 	
 	// value of ace can either be 1 or 11 depending on which one is more suitable
 	public void setBestAceValue(int handTotal) {
 		if (rank == Rank.ACE) {
-			if (handTotal <= 10) value = 11;
-			else value = 1;
+			if (handTotal <= 10) this.value = 11;
+			else this.value = 1;
 		}
 	}
 	
 	public int getValue() {
-		return value;
+		
+		return this.value;
 	}
 	
 	public Rank getRank() {
